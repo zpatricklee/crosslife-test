@@ -1,4 +1,4 @@
-fetch('/partials/home-banner.html')
+fetch('./partials/home-banner.html')
   .then((response) => response.text())
   .then((html) => {
     document.getElementById('home-banner-container').innerHTML = html;
@@ -75,7 +75,7 @@ fetch('/partials/home-banner.html')
   })
   .catch((error) => console.error('Error loading home-banner.html:', error));
 
-fetch('/partials/footer.html')
+fetch('./partials/footer.html')
   .then((response) => response.text())
   .then((html) => {
     document.getElementById('footer-container').innerHTML = html;
