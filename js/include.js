@@ -1,4 +1,7 @@
-fetch('/partials/home-banner.html')
+const BASE = location.hostname.includes('github.io') ? '/crosslife-test' : '';
+
+// fetch('/partials/home-banner.html')
+fetch(`${BASE}/partials/home-banner.html`)
   .then((response) => response.text())
   .then((html) => {
     document.getElementById('home-banner-container').innerHTML = html;
@@ -34,14 +37,14 @@ fetch('/partials/home-banner.html')
         icon.classList.add('fa-bars');
       }
     });
-
+    
     navbar.addEventListener('click', (e) => {
       if (e.target === navbar) {
         closeNavbar();
         closeOverlay();
       }
     });
-
+    
     aboutBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -50,14 +53,14 @@ fetch('/partials/home-banner.html')
         menuToggle.classList.add('overlay-active');
       }
     });
-
+    
     overlay.addEventListener('click', closeOverlay);
 
     backArrow.addEventListener('click', (e) => {
       e.stopPropagation();
       closeOverlay();
     });
-
+    
     overlay.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -74,9 +77,10 @@ fetch('/partials/home-banner.html')
     });
   })
   .catch((error) => console.error('Error loading home-banner.html:', error));
-
-fetch('/partials/footer.html')
-  .then((response) => response.text())
+  
+// fetch('/partials/footer.html')
+fetch(`${BASE}/partials/footer.html`)
+.then((response) => response.text())
   .then((html) => {
     document.getElementById('footer-container').innerHTML = html;
   })
