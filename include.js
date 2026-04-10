@@ -1,4 +1,4 @@
-fetch('/public/home-banner.html')
+fetch('/home-banner.html')
   .then((response) => response.text())
   .then((html) => {
     document.getElementById('home-banner-container').innerHTML = html;
@@ -75,7 +75,7 @@ fetch('/public/home-banner.html')
   })
   .catch((error) => console.error('Error loading home-banner.html:', error));
 
-fetch('/public/footer.html')
+fetch('/footer.html')
   .then((response) => response.text())
   .then((html) => {
     document.getElementById('footer-container').innerHTML = html;
