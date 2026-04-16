@@ -26,7 +26,36 @@ h2 {
   padding: 10px 20px;
 }
 
-.home-banner {
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  /* justify-content: space-between; */
+}
+
+.main-title h1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: url('./assets/church-street-view.png') no-repeat center center /
+    cover;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* your existing styles */
+  height: 30vh;
+  font-size: 5.5rem;
+  letter-spacing: -8px;
+  font-weight: 800;
+  padding: 0 12px;
+}
+
+#header {
   background: url('./assets/church-street-view.png') no-repeat center
     center/cover;
   background-attachment: fixed;
@@ -121,28 +150,11 @@ h2 {
   margin-bottom: 60px;
 }
 
-.welcome-section h1 {
-  background: url('./assets/church-street-view.png') no-repeat center center /
-    cover;
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  /* your existing styles */
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-  letter-spacing: -7px;
-}
-
 .welcome-section-text-container {
   display: flex;
   justify-content: center;
   align-items: top;
-  height: calc(100%);
+  text-align: center;
 }
 
 .sunday-gatherings {
@@ -425,27 +437,58 @@ h2 {
 }
 
 /* Responsive Styles */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .navbar {
     width: 80%;
     min-width: 0;
   }
+
+  .main-title h1 {
+    font-size: 5rem;
+    letter-spacing: -6px;
+  }
 }
 
 @media (max-width: 992px) {
-  .welcome-section {
-    height: 30vh;
-  }
-
-  .welcome-section h1 {
+  .main-title h1 {
     font-size: 4rem;
     letter-spacing: -5px;
-    padding: 10px 20px;
-    height: auto;
   }
 }
 
-@media (max-width: 804px) {
+@media (max-width: 805px) {
+  #header.not-home-page {
+    height: 45dvh;
+  }
+
+  #header.home-page {
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .main-wrapper {
+    flex-direction: column-reverse;
+    height: 100dvh;
+  }
+
+  .main-title h1 {
+    height: auto;
+    font-size: 3rem;
+    letter-spacing: -4px;
+    flex: 0;
+  }
+
+  .welcome-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    order: -1;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .navbar.active .dropdown-content {
     display: none;
   }
@@ -511,27 +554,6 @@ h2 {
 
   .navbar.active .give {
     border: 0;
-  }
-
-  .home-banner {
-    background-position: bottom;
-    height: 55vh;
-  }
-
-  .welcome-section {
-    height: auto;
-    margin-bottom: 20px;
-    padding: 10px 0px;
-  }
-
-  .welcome-section-text-container {
-    height: auto;
-  }
-
-  .welcome-section h1 {
-    height: auto;
-    font-size: 3rem;
-    letter-spacing: -4px;
   }
 
   h2 {

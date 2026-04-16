@@ -1,6 +1,6 @@
 const API_KEY = 'AIzaSyDgb7Cl1QVhVt54Xt8b48EX-bEH7mQiWGA';
 const CHANNEL_ID = 'UC9cqKtDJQFvr_0Yq09RLJRw';
-const MAX_RESULTS = 30; // Fetch more to allow for filtering
+const MAX_RESULTS = 50; // Fetch more to allow for filtering
 
 async function fetchSermons() {
   const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}&type=video`;
