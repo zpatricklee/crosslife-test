@@ -1,9 +1,4 @@
-const BASE = location.hostname.includes('github.io') ? '/crosslife-test' : '';
-
-console.log('BASE path:', BASE);
-
-// fetch('/partials/header.html')
-fetch(`${BASE}/partials/header.html`)
+fetch(`/public/partials/header.html`)
   .then((response) => response.text())
   .then((html) => {
     const headerPlaceholder = document.getElementById('header-placeholder');
@@ -90,8 +85,7 @@ fetch(`${BASE}/partials/header.html`)
   })
   .catch((error) => console.error('Error loading header.html:', error));
 
-// fetch('/partials/footer.html')
-fetch(`${BASE}/partials/footer.html`)
+fetch(`/public/partials/footer.html`)
   .then((response) => response.text())
   .then((html) => {
     document.getElementById('footer-container').innerHTML = html;
