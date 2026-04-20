@@ -31,10 +31,6 @@ async function fetchSermons() {
       const title = item.snippet.title || '';
       const isSermon = title.trim().toLowerCase().startsWith('sermon');
 
-      console.log(
-        `Video: ${title}, Duration: ${totalSeconds} seconds, isSermon: ${isSermon}`,
-      );
-
       return totalSeconds >= 180 && isSermon;
     })
     .slice(0, 5);
